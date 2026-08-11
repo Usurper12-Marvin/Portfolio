@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Ntsako Lubisi — Software Developer and Business Technology professional.">
+    <title>Ntsako Lubisi | Software Developer × Business Technology</title>
+    <style>
+        :root {
+            --black: #050807;
+            --panel: #0b100e;
+            --emerald: #00ff9d;
+            --text: #f3f7f5;
+            --muted: #91a19a;
+            --border: rgba(0, 255, 157, .16)
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: Inter, system-ui, sans-serif;
+            background: var(--black);
+            color: var(--text);
+            line-height: 1.6
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(5, 8, 7, .88);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border)
+        }
+
+        nav {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.2rem
+        }
+
+        .logo span,
+        .green {
+            color: var(--emerald)
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            color: var(--muted);
+            font-size: .9rem
+        }
+
+        .nav-links a:hover {
+            color: var(--emerald)
+        }
+
+        .hero {
+            min-height: 88vh;
+            display: grid;
+            align-items: center;
+            padding: 90px 0 70px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero:before {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            border-radius: 50%;
+            right: -170px;
+            top: 80px;
+            background: rgba(0, 255, 157, .07);
+            filter: blur(80px)
+        }
+
+        .eyebrow,
+        .section-label {
+            color: var(--emerald);
+            text-transform: uppercase;
+            letter-spacing: .18em;
+            font-size: .75rem;
+            font-weight: 900
+        }
+
+        .eyebrow {
+            margin-bottom: 18px
+        }
+
+        h1 {
+            max-width: 900px;
+            font-size: clamp(3.2rem, 8vw, 7rem);
+            line-height: .92;
+            letter-spacing: -.065em
+        }
+
+        .hero h1 span {
+            color: var(--emerald)
+        }
+
+        .hero-copy {
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 1.12rem;
+            margin: 28px 0
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: 800;
+            border: 1px solid var(--emerald);
+            transition: .2s
+        }
+
+        .btn-primary {
+            background: var(--emerald);
+            color: #03130c
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 28px rgba(0, 255, 157, .3);
+            transform: translateY(-2px)
+        }
+
+        .btn-secondary {
+            color: var(--emerald)
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 255, 157, .08)
+        }
+
+        section {
+            padding: 95px 0;
+            border-top: 1px solid rgba(255, 255, 255, .05)
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            letter-spacing: -.04em;
+            margin: 10px 0 14px
+        }
+
+        .section-intro {
+            color: var(--muted);
+            max-width: 700px;
+            margin-bottom: 35px
+        }
+
+        .about-grid,
+        .skills-grid,
+        .projects-grid {
+            display: grid;
+            gap: 18px
+        }
+
+        .about-grid {
+            grid-template-columns: 1.2fr .8fr
+        }
+
+        .skills-grid {
+            grid-template-columns: repeat(3, 1fr)
+        }
+
+        .projects-grid {
+            grid-template-columns: repeat(2, 1fr)
+        }
+
+        .card {
+            background: linear-gradient(145deg, #101714, #080c0a);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 0 35px rgba(0, 255, 157, .06)
+        }
+
+        .card:hover {
+            border-color: rgba(0, 255, 157, .38)
+        }
+
+        .card p {
+            color: var(--muted)
+        }
+
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .07)
+        }
+
+        .stat:last-child {
+            border: 0
+        }
+
+        .stat strong {
+            color: var(--emerald)
+        }
+
+        .skill-card h3 {
+            margin-bottom: 14px
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px
+        }
+
+        .tag {
+            padding: 6px 9px;
+            border: 1px solid rgba(0, 255, 157, .18);
+            border-radius: 999px;
+            color: #c7d3ce;
+            font-size: .78rem;
+            background: rgba(0, 255, 157, .035)
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 320px
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between
+        }
+
+        .project-number {
+            color: var(--emerald);
+            font-weight: 900;
+            font-size: .8rem
+        }
+
+        .project-card h3 {
+            font-size: 1.45rem;
+            margin: 10px 0 8px
+        }
+
+        .project-card p {
+            margin-bottom: 20px
+        }
+
+        .project-tech {
+            margin-top: auto
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 18px
+        }
+
+        .project-links a {
+            color: var(--emerald);
+            font-size: .82rem;
+            font-weight: 800;
+            border-bottom: 1px solid rgba(0, 255, 157, .4)
+        }
+
+        .timeline {
+            display: grid;
+            gap: 18px
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 170px 1fr;
+            gap: 25px
+        }
+
+        .timeline-date {
+            color: var(--emerald);
+            font-weight: 800;
+            font-size: .85rem
+        }
+
+        .contact {
+            text-align: center;
+            padding: 100px 20px
+        }
+
+        .contact p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+            color: var(--muted)
+        }
+
+        footer {
+            padding: 28px 0;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: .8rem
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between
+        }
+
+        @media(max-width:800px) {
+            .nav-links {
+                display: none
+            }
+
+            .about-grid,
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 5px
+            }
+
+            .hero {
+                min-height: 80vh
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav><a class="logo" href="#home">N<span>L</span>.</a>
+                <div class="nav-links"><a href="#about">About</a><a href="#skills">Skills</a><a
+                        href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="eyebrow">Software Development × Business Technology</div>
+                <h1>Ntsako <span>Lubisi.</span></h1>
+                <p class="hero-copy">I build practical technology solutions that connect software, data and business
+                    needs — from enterprise systems and customer platforms to data-driven applications.</p>
+                <div class="buttons"><a class="btn btn-primary" href="#projects">View Projects</a><a
+                        class="btn btn-secondary" href="Ntsako_Resume.pdf" download>Download CV</a></div>
+            </div>
+        </section>
+        <section id="about">
+            <div class="container">
+                <div class="section-label">01 / About</div>
+                <h2>Technology with a business mindset.</h2>
+                <div class="about-grid">
+                    <div class="card">
+                        <p>I’m a technology-focused professional with a foundation in software development and an
+                            interest in business technology, systems analysis and data. I enjoy taking real operational
+                            problems, understanding the people and processes behind them, and turning them into
+                            practical digital solutions.</p>
+                    </div>
+                    <div class="card">
+                        <div class="stat"><span>Focus</span><strong>Technology</strong></div>
+                        <div class="stat"><span>Approach</span><strong>Problem-solving</strong></div>
+                        <div class="stat"><span>Strength</span><strong>Systems thinking</strong></div>
+                        <div class="stat"><span>Mindset</span><strong>Build + Analyse</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills">
+            <div class="container">
+                <div class="section-label">02 / Skills</div>
+                <h2>What I work with.</h2>
+                <p class="section-intro">A combination of development, business technology and data capabilities.</p>
+                <div class="skills-grid">
+                    <div class="card skill-card">
+                        <h3>Development</h3>
+                        <div class="tags"><span class="tag">C#</span><span class="tag">.NET</span><span
+                                class="tag">ASP.NET Core</span><span class="tag">Entity Framework</span><span
+                                class="tag">Java</span><span class="tag">HTML/CSS</span><span
+                                class="tag">JavaScript</span><span class="tag">REST APIs</span></div>
+                    </div>
+                    <div class="card skill-card">
+                        <h3>Business Technology</h3>
+                        <div class="tags"><span class="tag">Business Analysis</span><span class="tag">Systems
+                                Analysis</span><span class="tag">CRM / PRM</span><span class="tag">Design
+                                Thinking</span><span class="tag">Process Design</span><span
+                                class="tag">Requirements</span></div>
+                    </div>
+                    <div class="card skill-card">
+                        <h3>Data & Cloud</h3>
+                        <div class="tags"><span class="tag">SQL</span><span class="tag">Power BI</span><span
+                                class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Power
+                                Platform</span><span class="tag">Data Analysis</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="container">
+                <div class="section-label">03 / Selected Work</div>
+                <h2>Projects that solve problems.</h2>
+                <p class="section-intro">Replace the placeholder links below with your real GitHub repositories and
+                    deployed applications.</p>
+                <div class="projects-grid">
+                    <article class="card project-card">
+                        <div class="project-top"><span class="project-number">01</span><span
+                                class="green">ENTERPRISE</span></div>
+                        <h3>SyncForce</h3>
+                        <p>Unified customer experience platform designed to connect customer interactions, cases and
+                            frontline workflows into one view.</p>
+                        <div class="project-tech tags"><span class="tag">C#</span><span class="tag">ASP.NET</span><span
+                                class="tag">AI</span><span class="tag">CRM</span></div>
+                        <div class="project-links"><a href="#">Live Demo →</a><a href="#">GitHub →</a><a href="#">Case
+                                Study →</a></div>
+                    </article>
+                    <article class="card project-card">
+                        <div class="project-top"><span class="project-number">02</span><span class="green">SYSTEM</span>
+                        </div>
+                        <h3>Partner Relationship Management</h3>
+                        <p>A PRM system concept focused on improving partner visibility, relationship management and
+                            operational processes.</p>
+                        <div class="project-tech tags"><span class="tag">C#</span><span class="tag">ASP.NET
+                                Core</span><span class="tag">SQL</span></div>
+                        <div class="project-links"><a href="#">Live Demo →</a><a href="#">GitHub →</a><a href="#">Case
+                                Study →</a></div>
+                    </article>
+                    <article class="card project-card">
+                        <div class="project-top"><span class="project-number">03</span><span
+                                class="green">SOFTWARE</span></div>
+                        <h3>Event Management System</h3>
+                        <p>A C#/.NET application concept for managing events, ticketing and related customer
+                            information.</p>
+                        <div class="project-tech tags"><span class="tag">C#</span><span class="tag">.NET</span><span
+                                class="tag">SQL</span></div>
+                        <div class="project-links"><a href="#">GitHub →</a><a href="#">Screenshots →</a></div>
+                    </article>
+                    <article class="card project-card">
+                        <div class="project-top"><span class="project-number">04</span><span class="green">MOBILE /
+                                WEB</span></div>
+                        <h3>KOVSIES RideShare</h3>
+                        <p>A ride-sharing application concept focused on connecting students with a practical transport
+                            experience.</p>
+                        <div class="project-tech tags"><span class="tag">Java</span><span
+                                class="tag">Android</span><span class="tag">Maps API</span></div>
+                        <div class="project-links"><a href="#">GitHub →</a><a href="#">Screenshots →</a></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="experience">
+            <div class="container">
+                <div class="section-label">04 / Experience</div>
+                <h2>Where technology meets people.</h2>
+                <div class="timeline">
+                    <div class="card timeline-item">
+                        <div class="timeline-date">MTN SA</div>
+                        <div>
+                            <h3>Technology / Business Projects</h3>
+                            <p>Worked on business technology and systems-focused initiatives involving customer
+                                experience, CRM/PRM thinking, design thinking and enterprise problem-solving.</p>
+                        </div>
+                    </div>
+                    <div class="card timeline-item">
+                        <div class="timeline-date">University</div>
+                        <div>
+                            <h3>Student Assistant</h3>
+                            <p>Supported students while developing communication, problem-solving and technical skills.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="education">
+            <div class="container">
+                <div class="section-label">05 / Education</div>
+                <h2>Foundation & continuous learning.</h2>
+                <div class="card">
+                    <h3>Computer Science / Information Technology</h3>
+                    <p>Academic foundation in software development, databases, systems and technology, supported by
+                        continuous practical project work.</p>
+                </div>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-label">06 / Contact</div>
+                <h2>Let's build something useful.</h2>
+                <p>For software development, business technology and technology-focused opportunities, feel free to
+                    connect.</p>
+                <div class="buttons" style="justify-content:center"><a class="btn btn-primary"
+                        href="mailto:lubisin299@gmail.com">Email Me</a><a class="btn btn-secondary"
+                        href="https://www.linkedin.com/in/ntsako-lubisi-721815260/" target="_blank" rel="noopener">LinkedIn</a><a
+                        class="btn btn-secondary" href="https://github.com/Usurper12-Marvin" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container"><span>© 2026 Ntsako Lubisi</span><span>Built with intention <span
+                    class="green">●</span></span></div>
+    </footer>
+</body>
+
+</html>
